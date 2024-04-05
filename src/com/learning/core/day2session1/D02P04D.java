@@ -21,22 +21,22 @@ public class D02P04D {
         int k = sc.nextInt();
 
         System.out.println("Distinct combinations of " + k + " numbers:");
-        findCombinations(num, k, 0, new int[k], 0);
+        combinations(num, k, 0, new int[k], 0);
 
         sc.close();
     }
 
-    public static void findCombinations(int[] nums, int k, int start, int[] combination, int index) {
+    public static void combinations(int[] nums, int k, int start, int[] com, int index) {
         if (index == k) {
-            for (int num : combination) {
+            for (int num : com) {
                 System.out.print(num + " ");
             }
             return;
         }
 
         for (int i = start; i < nums.length; i++) {
-            combination[index] = nums[i];
-            findCombinations(nums, k, i + 1, combination, index + 1);
+            com[index] = nums[i];
+            combinations(nums, k, i + 1, com, index + 1);
 
             while (i < nums.length - 1 && nums[i] == nums[i + 1]) {
                 i++;
