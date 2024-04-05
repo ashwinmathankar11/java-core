@@ -15,7 +15,7 @@ public class D02P03E {
             factorial *= i;
         }
         System.out.printf("Factorial of %d = %d", num, factorial);
-        
+        sc.close();
 	}
 
 }
